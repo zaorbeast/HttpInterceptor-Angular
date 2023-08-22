@@ -7,7 +7,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApiKeyInterceptor } from './api-key.interceptor';
 
 
-import {MatTableModule} from '@angular/material/table';
+
 import { BicepsComponent } from './biceps/biceps.component';
 
 
@@ -20,7 +20,7 @@ import { BicepsComponent } from './biceps/biceps.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatTableModule
+    
 
   ],
   providers: [
