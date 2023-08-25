@@ -5,22 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApiKeyInterceptor } from './api-key.interceptor';
+import{ExercicePhysiqueModule} from './exercice-physique/exercice-physique.module'
 
 
 
-import { BicepsComponent } from './biceps/biceps.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BicepsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    ExercicePhysiqueModule
+
 
   ],
   providers: [

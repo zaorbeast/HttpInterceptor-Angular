@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpServicesTestService } from '../http-services-test.service';
+import { HttpServicesTestService } from '../../http-services-test.service';
 
 @Component({
   selector: 'app-biceps',
