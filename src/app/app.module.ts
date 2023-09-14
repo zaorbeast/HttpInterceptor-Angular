@@ -4,9 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ApiKeyInterceptor } from './api-key.interceptor';
-import{ExercicePhysiqueModule} from './exercice-physique/exercice-physique.module'
 
+import{ExercicePhysiqueModule} from './exercice-physique/exercice-physique.module';
+import { ExerciceInterceptor } from './exercice-physique/exercice.interceptor';
+import {NgxsModule} from '@ngxs/store'
+import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin'
+import { ExerciseState } from './exercice-physique/store/exercise.state';
 
 
 
@@ -20,12 +23,12 @@ import{ExercicePhysiqueModule} from './exercice-physique/exercice-physique.modul
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ExercicePhysiqueModule
-
-
+    ExercicePhysiqueModule,
+    NgxsModule.forRoot([ExerciseState]),
+    NgxsLoggerPluginModule.forRoot()
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:ApiKeyInterceptor,multi:true}
+    
   ],
   bootstrap: [AppComponent]
 })

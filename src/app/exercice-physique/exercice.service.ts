@@ -4,9 +4,12 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpServicesTestService {
+export class ExerciceService {
 
-  constructor(private httpClient:HttpClient){}public get() {
+  constructor(private httpClient:HttpClient){}
+  public getExercises() {
+
     return this.httpClient.get('https://api.api-ninjas.com/v1/exercises?muscle=biceps');
   }
+
 }
